@@ -4,9 +4,8 @@ package com.btl.nmcnpm.dao.impl;
 import com.btl.nmcnpm.dao.GenericDAO;
 import com.btl.nmcnpm.mapper.RowMapper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -29,8 +28,38 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 
 
 	@Override
-	public <T1> List<T1> query(String sql, RowMapper<T1> rowMapper, Object... parameters) {
-		return null;
+	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
+		List<T> results = new ArrayList<>();
+		Connection connection = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = getConnection();
+			statement = connection.prepareStatement(sql);
+			setParameter(statement, parameters);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				// Chuyển resultset thành các đối tượng model
+				results.add(rowMapper.mapRow(resultSet));
+			}
+			return results;
+		} catch (SQLException e) {
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (resultSet != null) {
+					resultSet.close();
+				}
+			} catch (SQLException e) {
+				return null;
+			}
+		}
 	}
 
 	@Override
