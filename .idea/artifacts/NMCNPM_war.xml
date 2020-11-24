@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NMCNPM:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>NMCNPM</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="NMCNPM-1.0.war">
+      <element id="artifact" artifact-name="NMCNPM:war exploded" />
+    </root>
+  </artifact>
+</component>
