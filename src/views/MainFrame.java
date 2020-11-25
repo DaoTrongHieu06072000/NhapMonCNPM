@@ -73,7 +73,8 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 153, 0));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 34)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(6, 0, 27));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-crowdfunding-50.png"))); // NOI18N
         jLabel2.setText("QUẢN LÝ THU PHÍ ĐÓNG GÓP");
 
@@ -100,7 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 276, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
@@ -141,6 +142,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(6, 0, 27));
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-enter-60.png"))); // NOI18N
         jLabel8.setText("Thoát ");
 
@@ -211,6 +213,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         PhiVSjLabel6.setBackground(new java.awt.Color(255, 255, 255));
         PhiVSjLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        PhiVSjLabel6.setForeground(new java.awt.Color(6, 0, 27));
         PhiVSjLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-janitor-60.png"))); // NOI18N
         PhiVSjLabel6.setText("Phí Vệ Sinh");
 
@@ -244,6 +247,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         PhiDGjLabel7.setBackground(new java.awt.Color(255, 255, 255));
         PhiDGjLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        PhiDGjLabel7.setForeground(new java.awt.Color(6, 0, 27));
         PhiDGjLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-money-box-60.png"))); // NOI18N
         PhiDGjLabel7.setText("Phí Đóng Góp");
 
@@ -265,6 +269,7 @@ public class MainFrame extends javax.swing.JFrame {
         jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(6, 0, 27));
         jLabel9.setIcon(new javax.swing.ImageIcon("D:\\ThucHanh\\CNPM_23\\src\\icon\\icons8-male-user-70.png")); // NOI18N
         jLabel9.setText("Cán Bộ Kế Toán");
 
@@ -348,35 +353,35 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void HomejPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomejPanel5MouseEntered
         // TODO add your handling code here:
-        HomejPanel5.setBackground(Color.green);
+       // HomejPanel5.setBackground(Color.green);
         //jLabel1.setBackground(Color.green);
     }//GEN-LAST:event_HomejPanel5MouseEntered
 
     private void HomejPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomejPanel5MouseExited
         // TODO add your handling code here:
-        HomejPanel5.setBackground(new Color(255,153,0));
+        //HomejPanel5.setBackground(new Color(255,153,0));
        // jLabel1.setBackground(Color.red);
     }//GEN-LAST:event_HomejPanel5MouseExited
 
     private void PhiVSjPanel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseEntered
         // TODO add your handling code here:
-        PhiVSjPanel6.setBackground(Color.green);
+        //PhiVSjPanel6.setBackground(Color.green);
         //jLabel6.setBackground(Color.green);
     }//GEN-LAST:event_PhiVSjPanel6MouseEntered
 
     private void PhiVSjPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseExited
         // TODO add your handling code here:
-        PhiVSjPanel6.setBackground(new Color(255,153,0));
+       // PhiVSjPanel6.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_PhiVSjPanel6MouseExited
 
     private void PhiDGjPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiDGjPanel7MouseEntered
         // TODO add your handling code here:
-        PhiDGjPanel7.setBackground(Color.green);
+        //PhiDGjPanel7.setBackground(Color.green);
     }//GEN-LAST:event_PhiDGjPanel7MouseEntered
 
     private void PhiDGjPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiDGjPanel7MouseExited
         // TODO add your handling code here:
-        PhiDGjPanel7.setBackground(new Color(255,153,0));
+       // PhiDGjPanel7.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_PhiDGjPanel7MouseExited
 
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
@@ -408,27 +413,29 @@ public class MainFrame extends javax.swing.JFrame {
         if (JOptionPane.showConfirmDialog(null, "Are you sure to close??", "Confirm", JOptionPane.YES_NO_OPTION) == 0) {
             dispose();
             new LoginUI().setVisible(true);
+        }else{
+            jPanel4.setBackground(new Color(255,153,0));
         }
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void HomejPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomejPanel5MouseClicked
         // TODO add your handling code here:
-        HomejPanel5.setBackground(Color.green);
+        //HomejPanel5.setBackground(Color.green);
     }//GEN-LAST:event_HomejPanel5MouseClicked
 
     private void PhiVSjPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseClicked
         // TODO add your handling code here:
-        PhiVSjPanel6.setBackground(Color.green);
+        //PhiVSjPanel6.setBackground(Color.green);
     }//GEN-LAST:event_PhiVSjPanel6MouseClicked
 
     private void PhiDGjPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiDGjPanel7MouseClicked
         // TODO add your handling code here:
-        PhiDGjPanel7.setBackground(Color.green);
+        //PhiDGjPanel7.setBackground(Color.green);
     }//GEN-LAST:event_PhiDGjPanel7MouseClicked
 
     private void PhiVSjPanel6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseDragged
         // TODO add your handling code here:
-        PhiVSjPanel6.setBackground(Color.green);
+        //PhiVSjPanel6.setBackground(Color.green);
     }//GEN-LAST:event_PhiVSjPanel6MouseDragged
 
 
