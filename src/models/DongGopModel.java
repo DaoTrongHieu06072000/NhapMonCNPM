@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.btl.nmcnpm.models;
+package models;
 
 import java.sql.Date;
 /**

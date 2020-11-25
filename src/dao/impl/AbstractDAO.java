@@ -1,8 +1,8 @@
 package com.btl.nmcnpm.dao.impl;
 
 
-import com.btl.nmcnpm.dao.GenericDAO;
-import com.btl.nmcnpm.mapper.RowMapper;
+import dao.GenericDAO;
+import mapper.RowMapper;
 
 import java.sql.*;
 import java.util.ArrayList;

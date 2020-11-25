@@ -1,4 +1,4 @@
-package com.btl.nmcnpm.models;
+package models;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package com.btl.nmcnpm.models;
+package models;
 
 public class ThanhVienCuaHoModel {
     private Integer idNhanKhau;

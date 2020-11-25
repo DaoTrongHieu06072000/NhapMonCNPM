@@ -1,7 +1,7 @@
-package com.btl.nmcnpm.dao;
+package dao;
 
 
-import com.btl.nmcnpm.mapper.RowMapper;
+import mappers.RowMapper;
 
 import java.util.List;
 
