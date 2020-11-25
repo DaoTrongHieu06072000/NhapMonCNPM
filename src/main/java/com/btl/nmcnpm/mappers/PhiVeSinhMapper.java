@@ -1,2 +1,4 @@
-package com.btl.nmcnpm.mappers;public class PhiVeSinhMapper {
+package com.btl.nmcnpm.mappers;
+
+public class PhiVeSinhMapper {
 }

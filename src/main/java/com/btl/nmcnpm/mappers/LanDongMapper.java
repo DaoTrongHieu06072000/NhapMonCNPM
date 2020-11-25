@@ -1,2 +1,5 @@
-package com.btl.nmcnpm.mappers;public class LanDongMapper {
+package com.btl.nmcnpm.mappers;
+
+public class LanDongMapper {
+
 }

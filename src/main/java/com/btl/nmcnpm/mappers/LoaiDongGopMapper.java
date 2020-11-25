@@ -1,2 +1,4 @@
-package com.btl.nmcnpm.mappers;public class LoaiDongGopMapper {
+package com.btl.nmcnpm.mappers;
+
+public class LoaiDongGopMapper {
 }
