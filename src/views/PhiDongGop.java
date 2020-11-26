@@ -34,6 +34,7 @@ public class PhiDongGop extends javax.swing.JPanel{
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 102));
+        setPreferredSize(new java.awt.Dimension(703, 542));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("đóng góp cc");
@@ -45,14 +46,14 @@ public class PhiDongGop extends javax.swing.JPanel{
             .addGroup(layout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addComponent(jLabel1)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(jLabel1)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

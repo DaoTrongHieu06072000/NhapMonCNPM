@@ -10,7 +10,6 @@ import controller.MainController;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -428,20 +427,26 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_HomejPanel5MouseClicked
 
     private void PhiVSjPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseClicked
-        // TODO add your handling code here:
-        //PhiVSjPanel6.setBackground(Color.green);
+
     }//GEN-LAST:event_PhiVSjPanel6MouseClicked
 
     private void PhiDGjPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiDGjPanel7MouseClicked
-        // TODO add your handling code here:
-        //PhiDGjPanel7.setBackground(Color.green);
+
     }//GEN-LAST:event_PhiDGjPanel7MouseClicked
 
     private void PhiVSjPanel6MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhiVSjPanel6MouseDragged
-        // TODO add your handling code here:
-        //PhiVSjPanel6.setBackground(Color.green);
-    }//GEN-LAST:event_PhiVSjPanel6MouseDragged
 
+    }//GEN-LAST:event_PhiVSjPanel6MouseDragged
+ 
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MainFrame().setVisible(true);
+            }
+        });
+    }
+    
+    
     private void jLabel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseEntered
 
     }//GEN-LAST:event_jLabel5MouseEntered
