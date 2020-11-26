@@ -29,14 +29,14 @@ public class TrangChu extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(703, 542));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Thống kê chương trình ở here");
+        jLabel1.setText("z,xmv ,.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(256, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(367, 367, 367))
         );
