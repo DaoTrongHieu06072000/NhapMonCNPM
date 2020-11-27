@@ -6,7 +6,6 @@
 package views;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.util.Locale;
 import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
