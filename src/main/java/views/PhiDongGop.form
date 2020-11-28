@@ -141,9 +141,9 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPanel2" pref="111" max="32767" attributes="0"/>
+                      <Component id="jPanel2" pref="107" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jPanel1" pref="385" max="32767" attributes="0"/>
+                  <Component id="jPanel1" pref="382" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
