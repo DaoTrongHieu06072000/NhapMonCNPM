@@ -5,7 +5,8 @@
  */
 package views;
 
-import controller.LoginController;
+
+import com.btl.nhapmoncnpm.controllers.LoginController;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -46,18 +47,14 @@ public class LoginUI extends javax.swing.JFrame {
     private void login() {
         String userName = usernamejTextField1.getText();
         String password = String.valueOf(jPasswordField1.getPassword());
-        try {
-            if (this.controller.login(userName, password)) {
-                dispose();
-                MainFrame mainFrame = new MainFrame();
-                mainFrame.setLocationRelativeTo(null);
-                mainFrame.setResizable(false);
-                mainFrame.setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu chưa chính xác!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Có lỗi xảy ra!! Vui lòng kiểm tra lại!", "Warning!!", JOptionPane.ERROR_MESSAGE);
+        if (this.controller.login(userName, password)) {
+            dispose();
+            MainFrame mainFrame = new MainFrame();
+            mainFrame.setLocationRelativeTo(null);
+            mainFrame.setResizable(false);
+            mainFrame.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu chưa chính xác!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }
     

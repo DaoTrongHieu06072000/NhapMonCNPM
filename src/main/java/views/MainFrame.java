@@ -5,8 +5,10 @@
  */
 package views;
 
-import Beans.DanhMucBean;
-import controller.MainController;
+
+
+import Bean.DanhMucBean;
+import com.btl.nhapmoncnpm.controllers.MainController;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
