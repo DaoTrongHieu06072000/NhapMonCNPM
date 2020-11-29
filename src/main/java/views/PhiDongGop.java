@@ -212,7 +212,7 @@ public class PhiDongGop extends javax.swing.JPanel{
         jTextField1.setForeground(new java.awt.Color(255, 0, 0));
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        SearchjButton1.setBackground(new java.awt.Color(255, 255, 255));
+        SearchjButton1.setBackground(new java.awt.Color(255, 153, 0));
         SearchjButton1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         SearchjButton1.setText("Tìm kiếm");
         SearchjButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -237,7 +237,7 @@ public class PhiDongGop extends javax.swing.JPanel{
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel13.setText("Số tiền:");
 
-        OKjButton2.setBackground(new java.awt.Color(255, 255, 255));
+        OKjButton2.setBackground(new java.awt.Color(255, 153, 0));
         OKjButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         OKjButton2.setText("OK");
         OKjButton2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -420,22 +420,22 @@ public class PhiDongGop extends javax.swing.JPanel{
 
     private void SearchjButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchjButton1MouseEntered
         // TODO add your handling code here:
-        SearchjButton1.setBackground(new Color(255,153,0));
+        SearchjButton1.setBackground(new Color(0,255,204));
     }//GEN-LAST:event_SearchjButton1MouseEntered
 
     private void SearchjButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchjButton1MouseExited
         // TODO add your handling code here:
-        SearchjButton1.setBackground(Color.WHITE);
+        SearchjButton1.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_SearchjButton1MouseExited
 
     private void OKjButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKjButton2MouseEntered
         // TODO add your handling code here:
-        OKjButton2.setBackground(new Color(255,153,0));
+        OKjButton2.setBackground(new Color(0,255,204));
     }//GEN-LAST:event_OKjButton2MouseEntered
 
     private void OKjButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKjButton2MouseExited
         // TODO add your handling code here:
-        OKjButton2.setBackground(Color.WHITE);
+        OKjButton2.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_OKjButton2MouseExited
 
     /**

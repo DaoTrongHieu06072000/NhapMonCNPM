@@ -128,7 +128,7 @@ public class PhiVS extends javax.swing.JPanel {
         jToggleButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-checked-60.png"))); // NOI18N
         jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8-checked-60.png"))); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(255, 153, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Tạo danh sách mới");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -248,7 +248,7 @@ public class PhiVS extends javax.swing.JPanel {
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jTextField1.setPreferredSize(new java.awt.Dimension(8, 28));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setBackground(new java.awt.Color(255, 153, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setText("Tìm kiếm");
         jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -325,22 +325,23 @@ public class PhiVS extends javax.swing.JPanel {
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-        jButton1.setBackground(new Color(255,153,0));
+        
+        jButton1.setBackground(new Color(0,255,204));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         // TODO add your handling code here:
-        jButton1.setBackground(Color.WHITE);
+        jButton1.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
-        jButton3.setBackground(new Color(255,153,0));
+        jButton3.setBackground(new Color(0,255,204));
     }//GEN-LAST:event_jButton3MouseEntered
 
     private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
         // TODO add your handling code here:
-        jButton3.setBackground(Color.WHITE);
+        jButton3.setBackground(new Color(255,153,0));
     }//GEN-LAST:event_jButton3MouseExited
 
     /**
