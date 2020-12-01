@@ -1,5 +1,6 @@
 package com.btl.nhapmoncnpm.dao.impl;
 
+import services.DAO.IMPL.AbstractDAO;
 import com.btl.nhapmoncnpm.dao.IUserDAO;
 import com.btl.nhapmoncnpm.mappers.UserMapper;
 import com.btl.nhapmoncnpm.models.UserModel;

@@ -1,6 +1,7 @@
 package com.btl.nhapmoncnpm.mappers;
 
 
+import services.Mapper.RowMapper;
 import com.btl.nhapmoncnpm.models.UserModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
