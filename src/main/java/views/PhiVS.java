@@ -457,7 +457,9 @@ public class PhiVS extends javax.swing.JPanel {
 
     private void trangthaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trangthaiActionPerformed
         // TODO add your handling code here:
-        if (trangthai.getText().equals("Chưa thu")) {
+        if (trangthai.getText().equalsIgnoreCase("trạng thái")) {
+            JOptionPane.showMessageDialog(PhiVS.this, "Trạng thái thu phí!");
+        } else if (trangthai.getText().equals("Chưa thu")) {
             if (JOptionPane.showConfirmDialog(null, "Xác Nhận Thu Tiền?", "Xác Nhận Thu Tiền", JOptionPane.YES_NO_OPTION) == 0) {
                 trangthai.setText("Đã thu");
                 trangthai.setBackground(Color.green);
@@ -472,7 +474,7 @@ public class PhiVS extends javax.swing.JPanel {
                 setData();
             }
         } else {
-            JOptionPane.showMessageDialog(PhiVS.this, "Hộ Đã Thu!", "Thông báo" , 1);
+            JOptionPane.showMessageDialog(PhiVS.this, "Hộ Đã Thu!", "Thông báo", 1);
         }
     }//GEN-LAST:event_trangthaiActionPerformed
 
@@ -513,6 +515,9 @@ public class PhiVS extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        jTextField1.setText("");
+        jLabel14.setText("* Nhập tên chủ hộ cần tìm kiếm!");
+        jLabel14.setForeground(Color.black);
         dtm.setRowCount(0);
         setData();
     }//GEN-LAST:event_jButton1ActionPerformed
