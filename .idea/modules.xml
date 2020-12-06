@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NhapMonCNPM.iml" filepath="$PROJECT_DIR$/NhapMonCNPM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nhap_mon_cnpm.iml" filepath="$PROJECT_DIR$/Nhap_mon_cnpm.iml" />
     </modules>
   </component>
 </project>

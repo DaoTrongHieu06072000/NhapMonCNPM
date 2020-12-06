@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d0777b3-7d71-4cd1-a867-2e87f4b403c9" name="Default Changelist" comment="" />
+    <list default="true" id="0d7deede-45c6-47bb-9629-e6b360a975d2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SQL/cnpm.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/controller/MainController$LabelEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/controller/MainController$LabelEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/services/JDBCConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/services/JDBCConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/MainFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiDongGop$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiDongGop$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiDongGop.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiDongGop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiDongGop.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiDongGop.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiVS$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiVS$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiVS.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiVS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/PhiVS.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/PhiVS.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/TrangChu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/TrangChu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/views/TrangChu.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/views/TrangChu.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/JDBCConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/JDBCConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PhiDongGop.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PhiDongGop.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PhiDongGop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PhiDongGop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PhiVS.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PhiVS.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PhiVS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PhiVS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/TrangChu.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TrangChu.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/TrangChu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/TrangChu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,14 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="D:\Program Files (x86)\IntelliJ IDEA 2020.2.2\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1kpXKFZrhEFJniL3OBeDfRfZmL3" />
+  <component name="ProjectId" id="1l2b2iuQDsRUO5v6iUnr4aQbfD4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,19 +45,48 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="views.MainFrame" />
+      <module name="Nhap_mon_cnpm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="views.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainFrame" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1d0777b3-7d71-4cd1-a867-2e87f4b403c9" name="Default Changelist" comment="" />
-      <created>1606398447665</created>
+      <changelist id="0d7deede-45c6-47bb-9629-e6b360a975d2" name="Default Changelist" comment="" />
+      <created>1606797930003</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606398447665</updated>
-      <workItem from="1606398449416" duration="114000" />
+      <updated>1606797930003</updated>
+      <workItem from="1606797932081" duration="188000" />
     </task>
     <servers />
   </component>
@@ -49,9 +94,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1606398550081">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606798008717">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1606398550081" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606798008717" />
   </component>
 </project>

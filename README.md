@@ -1,4 +1,4 @@
-# NhapMonCNPM
+# Nhap_mon_cnpm
 P1: Mục đích
-P2: Tính Năng
-P3: Hướng dẫn 
+P2: Tính năng
+P3: Hướng dẫn
