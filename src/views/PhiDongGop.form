@@ -55,13 +55,12 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBoxSK" pref="293" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxNam" min="-2" pref="83" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="jComboBoxNam" min="-2" pref="88" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jComboBoxSK" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -142,7 +141,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPanel2" pref="110" max="32767" attributes="0"/>
+                      <Component id="jPanel2" pref="107" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" pref="385" max="32767" attributes="0"/>
               </Group>
@@ -362,6 +361,30 @@
                 <Column editable="false" title="T&#xea;n ch&#x1ee7; h&#x1ed9;" type="java.lang.String"/>
                 <Column editable="true" title="S&#x1ed1; ti&#x1ec1;n" type="java.lang.Integer"/>
               </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="45" minWidth="45" prefWidth="45" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="85" minWidth="85" prefWidth="85" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="150" minWidth="150" prefWidth="150" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
             </Property>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>

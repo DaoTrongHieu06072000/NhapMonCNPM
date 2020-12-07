@@ -7,7 +7,6 @@ package views;
 
 import java.awt.Color;
 import java.util.List;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -27,7 +26,6 @@ import services.DAO.IMPL.ThanhVienCuaHoDAO;
  */
 public class PhiVS extends javax.swing.JPanel {
 
-    ThanhVienCuaHoDAO tvchDAO = new ThanhVienCuaHoDAO();
     PhiVeSinhDAO phiVeSinhDAO = new PhiVeSinhDAO();
     HoKhauDAO hkdao = new HoKhauDAO();
     NhanKhauDAO nhanKhauDAO = new NhanKhauDAO();
@@ -111,11 +109,6 @@ public class PhiVS extends javax.swing.JPanel {
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox1ItemStateChanged(evt);
-            }
-        });
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -464,7 +457,7 @@ public class PhiVS extends javax.swing.JPanel {
             String aaa = String.valueOf(pvsjTable1.getValueAt(row, 3));
             jLabel8.setText(aaa + "  người");
             String snguoi[] = aaa.split(" ");
-            jLabel7.setText(String.format("%,.0f", (double) Integer.valueOf(snguoi[0]) * 72000) + " vnd");
+            jLabel7.setText(String.format("%,.0f", (double) Integer.valueOf(snguoi[0]) * 72000) + " vnđ");
         }
 
 
@@ -482,19 +475,28 @@ public class PhiVS extends javax.swing.JPanel {
                 String IDphivs = String.valueOf(pvsjTable1.getValueAt(row, 0));
                 PhiVeSinhModel pvsm = phiVeSinhDAO.findById(IDphivs);
                 pvsm.setDaThu(1);
-//                String date = java.time.LocalDate.now().toString();
-//                pvsm.setNgayNop(date);
-                phiVeSinhDAO.update(pvsm);
-                JOptionPane.showMessageDialog(PhiVS.this, "Thu thành công!");
+                phiVeSinhDAO.update(pvsm);              
                 dtm.setRowCount(0);
                 nam = (String) jComboBox1.getSelectedItem();
                 setData();
+                JOptionPane.showMessageDialog(PhiVS.this, "Thu thành công!");
             }
         } else {
-            JOptionPane.showMessageDialog(PhiVS.this, "Hộ Đã Thu!", "Thông báo", 1);
+            if (JOptionPane.showConfirmDialog(null, "Hủy Xác Nhận Thu Tiền?", "Hủy Xác Nhận Thu Tiền", JOptionPane.YES_NO_OPTION) == 0) {
+                trangthai.setText("Chưa thu");
+                trangthai.setBackground(Color.red);
+                int row = pvsjTable1.getSelectedRow();
+                String IDphivs = String.valueOf(pvsjTable1.getValueAt(row, 0));
+                PhiVeSinhModel pvsm = phiVeSinhDAO.findById(IDphivs);
+                pvsm.setDaThu(0);
+                phiVeSinhDAO.update(pvsm);              
+                dtm.setRowCount(0);
+                nam = (String) jComboBox1.getSelectedItem();
+                setData();
+                JOptionPane.showMessageDialog(PhiVS.this, "Thao tác thành công!");
+            }
+            //JOptionPane.showMessageDialog(PhiVS.this, "Hộ Đã Thu!", "Thông báo", 1);
         }
-
-
     }//GEN-LAST:event_trangthaiActionPerformed
 
     private void searchjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchjButton3ActionPerformed
@@ -530,7 +532,7 @@ public class PhiVS extends javax.swing.JPanel {
 //        } else {
 //            setData();
 //        }
-
+        ThanhVienCuaHoDAO tvchDAO = new ThanhVienCuaHoDAO();
         if (jTextField1.getText().equals("")) {
             dtm.setRowCount(0);
             setData();
@@ -581,17 +583,12 @@ public class PhiVS extends javax.swing.JPanel {
         jButton1.setBackground(new Color(255, 153, 0));
     }//GEN-LAST:event_jButton1MouseExited
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void AddnewDSjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddnewDSjButton1ActionPerformed
         // TODO add your handling code here:
         int a = jComboBox1.getItemCount();
-        //System.out.println(a);
         String b = jComboBox1.getItemAt(a - 1);
         int c = Integer.valueOf(b) + 1;
-        if (JOptionPane.showConfirmDialog(null, "Tạo danh sách cho năm " + c + "?", "Tạo danh sách mới", JOptionPane.YES_NO_OPTION) == 0) {
+        if (JOptionPane.showConfirmDialog(PhiVS.this, "Tạo danh sách cho năm " + c + "?", "Tạo danh sách mới", JOptionPane.YES_NO_OPTION) == 0) {
             List<PhiVeSinhModel> listPVS = phiVeSinhDAO.findByYear(b);
             for (PhiVeSinhModel p : listPVS) {
                 p.setDaThu(0);

@@ -6,18 +6,14 @@
 package views;
 
 import java.awt.Color;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
-import jdk.nashorn.internal.objects.NativeString;
 import model.DongGopModel;
 import model.HoKhauModel;
 import model.LanDongModel;
 import model.LoaiDongGopModel;
 import model.NhanKhauModel;
-import model.PhiVeSinhModel;
 import services.DAO.IMPL.DongGopDAO;
 import services.DAO.IMPL.HoKhauDAO;
 import services.DAO.IMPL.LanDongDAO;
@@ -43,16 +39,16 @@ public class PhiDongGop extends javax.swing.JPanel {
     String loaiDG;
     DefaultTableModel dtm = new DefaultTableModel();
     DongGopDAO phiDongGopDAO = new DongGopDAO();
-
     private JFrame parentFrame;
 
     public PhiDongGop(JFrame parentFrame) {
         this.parentFrame = parentFrame;
         initComponents();
+
         dtm.setRowCount(0);
         List<DongGopModel> listNam = phiDongGopDAO.findAllYear();
         for (DongGopModel p : listNam) {
-            jComboBoxNam.addItem(p.getNgayDong().toString().substring(0,4));
+            jComboBoxNam.addItem(p.getNgayDong().toString().substring(0, 4));
         }
         nam = (String) jComboBoxNam.getSelectedItem();
         List<LanDongModel> listDot = lanDongDAO.findAllDot(nam);
@@ -61,48 +57,33 @@ public class PhiDongGop extends javax.swing.JPanel {
         }
         dot = (String) jComboBoxDot.getSelectedItem();
         List<LoaiDongGopModel> listLoaiDG = ldgDAO.findAll();
-        
+
         for (LoaiDongGopModel loaiDongGopModel : listLoaiDG) {
             jComboBoxSK.addItem(loaiDongGopModel.getName().toString());
         }
         loaiDG = (String) jComboBoxSK.getSelectedItem();
-
-        //setData();
     }
-    
-    
+
     public void setData() {
         int stt = 0;
         dtm = (DefaultTableModel) pdgjTable1.getModel();
         List<DongGopModel> listPdg = phiDongGopDAO.findAll(nam);
         List<LoaiDongGopModel> loaiDg = ldgDAO.findByName(loaiDG);
-        List<LanDongModel> lanDongModels = lanDongDAO.findByNamAndLanThu(nam, dot);     
-        //jTextField2.setText(lanDongModels.get(0).getNgayBD().toString());
-        //jTextField3.setText(lanDongModels.get(0).getNgayKT().toString());
+        List<LanDongModel> lanDongModels = lanDongDAO.findByNamAndLanThu(nam, dot);
         for (DongGopModel phiDongGopModel : listPdg) {
-            for (LoaiDongGopModel loaiDongGop: loaiDg) {
+            for (LoaiDongGopModel loaiDongGop : loaiDg) {
                 if (phiDongGopModel.getIdLoaiDonggop().toString().equals(loaiDongGop.getIdLoaiDongGop().toString())) {
                     for (LanDongModel lanDongModel : lanDongModels) {
-                       if (phiDongGopModel.getIdLanDong().toString().equals(lanDongModel.getIdLanDong().toString())) {
+                        if (phiDongGopModel.getIdLanDong().toString().equals(lanDongModel.getIdLanDong().toString())) {
                             HoKhauModel a = hkdao.findByIdHoKhau(phiDongGopModel.getIdHoKhau());
                             NhanKhauModel b = nhanKhauDAO.findById(a.getIdChuHo());
-                            dtm.addRow(new Object[]{++stt, a.getMaHoKhau(), b.getHoTen(), phiDongGopModel.getSoTien()});
-                    } 
+                            dtm.addRow(new Object[]{++stt, "    " + a.getMaHoKhau(), "      " + b.getHoTen(), String.format("%,.0f", (double) phiDongGopModel.getSoTien()) + " vnđ"});
+                        }
                     }
-                    
+
                 }
             }
-           
         }
-//        jLabel9.setText("");
-//        jLabel10.setText("");
-//        jLabel12.setText("");
-//        jLabel8.setText("");
-//        jLabel7.setText("");
-//        jTextField2.setText("");
-//        trangthai.setText("Trạng thái");
-//        trangthai.setBackground(Color.white);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -258,6 +239,17 @@ public class PhiDongGop extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(pdgjTable1);
+        if (pdgjTable1.getColumnModel().getColumnCount() > 0) {
+            pdgjTable1.getColumnModel().getColumn(0).setMinWidth(45);
+            pdgjTable1.getColumnModel().getColumn(0).setPreferredWidth(45);
+            pdgjTable1.getColumnModel().getColumn(0).setMaxWidth(45);
+            pdgjTable1.getColumnModel().getColumn(1).setMinWidth(85);
+            pdgjTable1.getColumnModel().getColumn(1).setPreferredWidth(85);
+            pdgjTable1.getColumnModel().getColumn(1).setMaxWidth(85);
+            pdgjTable1.getColumnModel().getColumn(2).setMinWidth(150);
+            pdgjTable1.getColumnModel().getColumn(2).setPreferredWidth(150);
+            pdgjTable1.getColumnModel().getColumn(2).setMaxWidth(150);
+        }
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 204));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -393,11 +385,10 @@ public class PhiDongGop extends javax.swing.JPanel {
                                     .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxSK, 0, 293, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxNam, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jComboBoxNam, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(18, 18, 18)))
+                                        .addComponent(jComboBoxSK, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)))))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -460,7 +451,7 @@ public class PhiDongGop extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -497,9 +488,10 @@ public class PhiDongGop extends javax.swing.JPanel {
     }//GEN-LAST:event_OKjButton2MouseExited
 
     private void jComboBoxNamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxNamItemStateChanged
+        // TODO add your handling code here:
         dtm.setRowCount(0);
         nam = (String) jComboBoxNam.getSelectedItem();
-        //dot = (String) jComboBox1.getSelectedItem();
+        //dot = (String) jComboBoxDot.getSelectedItem();
         dot = "1";
         jTextFieldBD.setText(lanDongDAO.findByNamAndLanThu(nam, dot).get(0).getNgayBD().toString());
         jTextFieldKT.setText(lanDongDAO.findByNamAndLanThu(nam, dot).get(0).getNgayKT().toString());
@@ -507,14 +499,19 @@ public class PhiDongGop extends javax.swing.JPanel {
     }//GEN-LAST:event_jComboBoxNamItemStateChanged
 
     private void jComboBoxSKItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxSKItemStateChanged
+        // TODO add your handling code here:
+        nam = (String) jComboBoxNam.getSelectedItem();
+        dot = (String) jComboBoxDot.getSelectedItem();
         dtm.setRowCount(0);
         loaiDG = (String) jComboBoxSK.getSelectedItem();
+        
         setData();
     }//GEN-LAST:event_jComboBoxSKItemStateChanged
 
     private void jComboBoxDotItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxDotItemStateChanged
+        // TODO add your handling code here:
         dtm.setRowCount(0);
-        nam = "2020";
+        nam = (String) jComboBoxNam.getSelectedItem();
         dot = (String) jComboBoxDot.getSelectedItem();
         jTextFieldBD.setText(lanDongDAO.findByNamAndLanThu(nam, dot).get(0).getNgayBD().toString());
         jTextFieldKT.setText(lanDongDAO.findByNamAndLanThu(nam, dot).get(0).getNgayKT().toString());
