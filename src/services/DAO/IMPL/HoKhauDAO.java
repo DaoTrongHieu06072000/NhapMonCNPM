@@ -36,5 +36,12 @@ public class HoKhauDAO extends AbstractDAO<HoKhauModel> implements IHoKhauDAO {
         List<HoKhauModel> listhk = query(sql, new HoKhauMapper(), IDChuHo);
         return listhk.isEmpty() ? null : listhk.get(0);
     }
+
+    @Override
+    public HoKhauModel findByMaHK(String MaHK) {
+        String sql = "SELECT * FROM ho_khau WHERE maHoKhau = ?";
+        List<HoKhauModel> listhk = query(sql, new HoKhauMapper(), MaHK);
+        return listhk.isEmpty() ? null : listhk.get(0);
+    }
     
 }

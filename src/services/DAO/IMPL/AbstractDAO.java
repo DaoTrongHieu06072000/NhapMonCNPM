@@ -8,11 +8,10 @@ import java.util.List;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
-    //ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection getConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/cnpm23";
+			String url = "jdbc:mysql://localhost:3306/cnpm23_final";
 			String user = "root";
 			String password = "";
 			return DriverManager.getConnection(url, user, password);
@@ -78,6 +77,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
                     statement.setTimestamp(index, (Timestamp) parameter);
                 } else if (parameter instanceof Date) {
                     statement.setDate(index, (Date) parameter);
+                    //statement.setDate(index, x, cal);
                 }
             }
         } catch (SQLException e) {

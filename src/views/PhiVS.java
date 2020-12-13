@@ -6,6 +6,7 @@
 package views;
 
 import java.awt.Color;
+import java.sql.Timestamp;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
@@ -26,6 +27,7 @@ import services.DAO.IMPL.ThanhVienCuaHoDAO;
  */
 public class PhiVS extends javax.swing.JPanel {
 
+    ThanhVienCuaHoDAO tvchDAO = new ThanhVienCuaHoDAO();
     PhiVeSinhDAO phiVeSinhDAO = new PhiVeSinhDAO();
     HoKhauDAO hkdao = new HoKhauDAO();
     NhanKhauDAO nhanKhauDAO = new NhanKhauDAO();
@@ -43,7 +45,9 @@ public class PhiVS extends javax.swing.JPanel {
             jComboBox1.addItem(p.getNam().toString());
         }
         nam = (String) jComboBox1.getSelectedItem();
-
+        Timestamp a = new Timestamp(System.currentTimeMillis());
+        nam = String.valueOf(a.getYear() + 1900);
+        jComboBox1.setSelectedItem(nam);
         //setData();
     }
 
@@ -55,7 +59,8 @@ public class PhiVS extends javax.swing.JPanel {
 
             HoKhauModel a = hkdao.findByIdHoKhau(phiVeSinhModel.getIdHoKhau());
             NhanKhauModel b = nhanKhauDAO.findById(a.getIdChuHo());
-            dtm.addRow(new Object[]{phiVeSinhModel.getIdPhiVeSinh(), a.getMaHoKhau(), b.getHoTen(), phiVeSinhModel.getSoNhanKhau(), phiVeSinhModel.getDaThu()});
+            dtm.addRow(new Object[]{phiVeSinhModel.getIdPhiVeSinh(), a.getMaHoKhau(),
+                 b.getHoTen(), phiVeSinhModel.getSoNhanKhau(), phiVeSinhModel.getDaThu()});
         }
         jLabel9.setText("");
         jLabel10.setText("");
@@ -109,6 +114,11 @@ public class PhiVS extends javax.swing.JPanel {
         jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -457,7 +467,7 @@ public class PhiVS extends javax.swing.JPanel {
             String aaa = String.valueOf(pvsjTable1.getValueAt(row, 3));
             jLabel8.setText(aaa + "  người");
             String snguoi[] = aaa.split(" ");
-            jLabel7.setText(String.format("%,.0f", (double) Integer.valueOf(snguoi[0]) * 72000) + " vnđ");
+            jLabel7.setText(String.format("%,.0f", (double) Integer.valueOf(snguoi[0]) * 72000) + " vnd");
         }
 
 
@@ -475,64 +485,37 @@ public class PhiVS extends javax.swing.JPanel {
                 String IDphivs = String.valueOf(pvsjTable1.getValueAt(row, 0));
                 PhiVeSinhModel pvsm = phiVeSinhDAO.findById(IDphivs);
                 pvsm.setDaThu(1);
-                phiVeSinhDAO.update(pvsm);              
+//                String date = java.time.LocalDate.now().toString();
+//                pvsm.setNgayNop(date);
+                phiVeSinhDAO.update(pvsm);
+
                 dtm.setRowCount(0);
                 nam = (String) jComboBox1.getSelectedItem();
                 setData();
                 JOptionPane.showMessageDialog(PhiVS.this, "Thu thành công!");
             }
         } else {
-            if (JOptionPane.showConfirmDialog(null, "Hủy Xác Nhận Thu Tiền?", "Hủy Xác Nhận Thu Tiền", JOptionPane.YES_NO_OPTION) == 0) {
+            if (JOptionPane.showConfirmDialog(PhiVS.this, "Hủy Xác Nhận Thu Tiền?", "Hủy Xác Nhận Thu Tiền", JOptionPane.YES_NO_OPTION) == 0) {
                 trangthai.setText("Chưa thu");
                 trangthai.setBackground(Color.red);
                 int row = pvsjTable1.getSelectedRow();
                 String IDphivs = String.valueOf(pvsjTable1.getValueAt(row, 0));
                 PhiVeSinhModel pvsm = phiVeSinhDAO.findById(IDphivs);
                 pvsm.setDaThu(0);
-                phiVeSinhDAO.update(pvsm);              
+                phiVeSinhDAO.update(pvsm);
+
                 dtm.setRowCount(0);
                 nam = (String) jComboBox1.getSelectedItem();
                 setData();
                 JOptionPane.showMessageDialog(PhiVS.this, "Thao tác thành công!");
             }
-            //JOptionPane.showMessageDialog(PhiVS.this, "Hộ Đã Thu!", "Thông báo", 1);
         }
+
+
     }//GEN-LAST:event_trangthaiActionPerformed
 
     private void searchjButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchjButton3ActionPerformed
-        // TODO add your handling code here:
-        //jLabel14.setForeground(new Color(0, 255, 204));
-//        String ten = jTextField1.getText().toLowerCase();
-//        if (ten.equals("")) {
-//            dtm.setRowCount(0);
-//            jLabel14.setText("* Nhập tên chủ hộ cần tìm kiếm!");
-//            setData();
-//        }
-//        int row = pvsjTable1.getRowCount();
-//        if (row > 0) {
-//            for (int i = 0; i < row; i++) {
-//                jLabel14.setForeground(Color.BLACK);
-//                jLabel14.setText("* Nhập tên chủ hộ cần tìm kiếm!");
-//                String hoten = String.valueOf(pvsjTable1.getValueAt(i, 2)).toLowerCase();
-//                if (hoten.equalsIgnoreCase(ten)) {
-//                    String a1 = String.valueOf(pvsjTable1.getValueAt(i, 0));
-//                    String a2 = String.valueOf(pvsjTable1.getValueAt(i, 1));
-//                    String a3 = String.valueOf(pvsjTable1.getValueAt(i, 2));
-//                    String a4 = String.valueOf(pvsjTable1.getValueAt(i, 3));
-//                    int a5 = (Integer) pvsjTable1.getValueAt(i, 4);;
-//                    dtm.setRowCount(0);
-//                    dtm.addRow(new Object[]{a1, a2, a3, a4, a5});
-//                    break;
-//                } else {
-//                    //dtm.setRowCount(0);
-//                    jLabel14.setText("* Không có kết quả tương ứng!");
-//                    jLabel14.setForeground(Color.RED);
-//                }
-//            }
-//        } else {
-//            setData();
-//        }
-        ThanhVienCuaHoDAO tvchDAO = new ThanhVienCuaHoDAO();
+
         if (jTextField1.getText().equals("")) {
             dtm.setRowCount(0);
             setData();
@@ -540,9 +523,9 @@ public class PhiVS extends javax.swing.JPanel {
             dtm.setRowCount(0);
             String ten = jTextField1.getText();
             List<NhanKhauModel> listNK = nhanKhauDAO.findByName(ten);
-            ThanhVienCuaHoModel tvch = new ThanhVienCuaHoModel();
-            HoKhauModel hk = new HoKhauModel();
-            PhiVeSinhModel pvs = new PhiVeSinhModel();
+            ThanhVienCuaHoModel tvch;
+            HoKhauModel hk;
+            PhiVeSinhModel pvs;
             if (listNK.isEmpty()) {
                 JOptionPane.showMessageDialog(PhiVS.this, "Không tìm thấy kết quả nào!");
             } else {
@@ -582,6 +565,10 @@ public class PhiVS extends javax.swing.JPanel {
         // TODO add your handling code here:
         jButton1.setBackground(new Color(255, 153, 0));
     }//GEN-LAST:event_jButton1MouseExited
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void AddnewDSjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddnewDSjButton1ActionPerformed
         // TODO add your handling code here:

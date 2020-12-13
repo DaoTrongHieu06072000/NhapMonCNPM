@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
 import model.DongGopModel;
-import model.LoaiDongGopModel;
+import model.SuKienModel;
 import model.PhiVeSinhModel;
 import services.DAO.IMPL.DongGopDAO;
 import services.DAO.IMPL.LanDongDAO;
-import services.DAO.IMPL.LoaiDongGopDAO;
+import services.DAO.IMPL.SuKienDAO;
 import services.DAO.IMPL.PhiVeSinhDAO;
 import services.DAO.IMPL.ThanhVienCuaHoDAO;
 import services.StringService;
@@ -29,7 +29,7 @@ public class TrangChuController {
     DongGopDAO dongGopDAO = new DongGopDAO();
     ThanhVienCuaHoDAO thanhVienCuaHoDAO = new ThanhVienCuaHoDAO();
     LanDongDAO lanDongDAO = new LanDongDAO();
-    LoaiDongGopDAO loaiDongGopDAO = new LoaiDongGopDAO();
+    SuKienDAO skDAO = new SuKienDAO();
 
     private JLabel soHoDaThuJLabel;
     private JLabel TongTienPhiVSJLabel;
@@ -73,11 +73,8 @@ public class TrangChuController {
             Sum += dongGopModel.getSoTien();
         }
         TongtienPhiDGJLabel.setText(String.format("%,.0f", Sum));
-        //tong so dot
-        int dot = lanDongDAO.getTotalItem(nam);
-        tongSoDotMoJLabel.setText(dot + " đợt");
-        //su kien
         
-        //tongSoSKjJLabel.setText(String.valueOf(count) + " sự kiện");
+        List<SuKienModel> listsk = skDAO.findAll(nam);
+        tongSoSKjJLabel.setText(String.valueOf(listsk.size()));
     }
 }

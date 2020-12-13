@@ -8,4 +8,5 @@ public interface IHoKhauDAO extends GenericDAO<HoKhauModel> {
     List<HoKhauModel> findAll();
     HoKhauModel findByIdHoKhau(int idHoKhau);
     HoKhauModel findByIDChuHo (int IDChuHo);
+    HoKhauModel findByMaHK (String MaHK);
 }

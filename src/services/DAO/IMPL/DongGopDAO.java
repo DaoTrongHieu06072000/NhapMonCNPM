@@ -17,18 +17,18 @@ public class DongGopDAO extends AbstractDAO<DongGopModel> implements IDongGopDAO
 
     @Override
     public Long save(DongGopModel dongGopModel) {
-        StringBuilder sql = new StringBuilder("INSERT INTO phi_dong_gop (idHoKhau, idLoaiDongGop,");
-        sql.append(" idLanDong, ngayDong, so_tien)");
-        sql.append(" VALUES (?, ?, ?, ?, ?)");
-        return insert(sql.toString(), dongGopModel.getIdHoKhau(), dongGopModel.getIdLoaiDonggop(),
-                dongGopModel.getIdLanDong(), dongGopModel.getNgayDong(), dongGopModel.getSoTien());
+        StringBuilder sql = new StringBuilder("INSERT INTO phi_dong_gop (idHoKhau, idsu_kien,");
+        sql.append(" ngayDong, so_tien)");
+        sql.append(" VALUES (?, ?, ?, ?)");
+        return insert(sql.toString(), dongGopModel.getIdHoKhau(), dongGopModel.getIdSuKien(),
+                dongGopModel.getNgayDong(), dongGopModel.getSoTien());
     }
 
     @Override
     public void update(DongGopModel updateDonggop) {
-        StringBuilder sql = new StringBuilder("UPDATE phi_dong_gop SET idHoKhau = ?, idLoaiDongGop = ?");
-        sql.append(", idLanDong = ?, ngayDong = ?, so_tien = ? WHERE iddong_gop = ?");
-        update(sql.toString(), updateDonggop.getIdHoKhau(), updateDonggop.getIdLoaiDonggop(), updateDonggop.getIdLanDong(),
+        StringBuilder sql = new StringBuilder("UPDATE phi_dong_gop SET idHoKhau = ?, idsu_kien = ?");
+        sql.append(", ngayDong = ?, so_tien = ? WHERE iddong_gop = ?");
+        update(sql.toString(), updateDonggop.getIdHoKhau(), updateDonggop.getIdSuKien(),
                 updateDonggop.getNgayDong(), updateDonggop.getSoTien(), updateDonggop.getIdDongGop());
     }
 
@@ -43,4 +43,24 @@ public class DongGopDAO extends AbstractDAO<DongGopModel> implements IDongGopDAO
         String sql = "SELECT * FROM phi_dong_gop GROUP BY year(ngayDong)";
         return query(sql, new DongGopMapper());
     }
+
+    @Override
+    public List<DongGopModel> findByIdSk(int idSk) {
+        String sql = "SELECT * FROM phi_dong_gop WHERE idsu_kien = ?";
+        return query(sql, new DongGopMapper(), idSk);
+    }
+
+    @Override
+    public DongGopModel findByIdDG(String IDDG) {
+        String sql = "SELECT * FROM phi_dong_gop WHERE iddong_gop = ?";
+        List<DongGopModel> lista = query(sql, new DongGopMapper(), IDDG);
+        return lista.isEmpty() ? null : lista.get(0);
+    }
+
+    @Override
+    public void delete(String idSK) {
+       String sql = "DELETE FROM phi_dong_gop WHERE idsu_kien = ?";
+       update(sql, idSK);
+    }
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 01, 2020 lúc 08:48 AM
+-- Thời gian đã tạo: Th12 13, 2020 lúc 05:45 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `cnpm23`
+-- Cơ sở dữ liệu: `cnpm23_final`
 --
 
 -- --------------------------------------------------------
@@ -68,21 +68,6 @@ CREATE TABLE `dinh_chinh` (
   `thayDoiThanh` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ngayThayDoi` date DEFAULT NULL,
   `nguoiThayDoi` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `dong_gop`
---
-
-CREATE TABLE `dong_gop` (
-  `iddong_gop` int(11) NOT NULL,
-  `idHoKhau` int(11) NOT NULL,
-  `idLoaiDongGop` int(11) NOT NULL,
-  `idLanDong` int(11) NOT NULL,
-  `ngayDong` datetime NOT NULL,
-  `so_tien` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -193,20 +178,17 @@ CREATE TABLE `khai_tu` (
 CREATE TABLE `lan_dong` (
   `idlan_dong` int(11) NOT NULL,
   `lan_thu` int(11) NOT NULL,
-  `ngay` datetime NOT NULL
+  `ngay_bat_dau` date NOT NULL,
+  `ngay_ket_thuc` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Cấu trúc bảng cho bảng `loai_dong_gop`
+-- Đang đổ dữ liệu cho bảng `lan_dong`
 --
 
-CREATE TABLE `loai_dong_gop` (
-  `idloai_dong_gop` int(11) NOT NULL,
-  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `code` varchar(45) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `lan_dong` (`idlan_dong`, `lan_thu`, `ngay_bat_dau`, `ngay_ket_thuc`) VALUES
+(1, 1, '2020-06-24', '2020-12-08'),
+(2, 2, '2020-10-14', '2020-12-14');
 
 -- --------------------------------------------------------
 
@@ -271,6 +253,41 @@ INSERT INTO `nhan_khau` (`ID`, `maNhanKhau`, `hoTen`, `bietDanh`, `namSinh`, `gi
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `phi_dong_gop`
+--
+
+CREATE TABLE `phi_dong_gop` (
+  `iddong_gop` int(11) NOT NULL,
+  `idHoKhau` int(11) NOT NULL,
+  `idsu_kien` int(11) NOT NULL,
+  `ngayDong` date DEFAULT NULL,
+  `so_tien` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phi_dong_gop`
+--
+
+INSERT INTO `phi_dong_gop` (`iddong_gop`, `idHoKhau`, `idsu_kien`, `ngayDong`, `so_tien`) VALUES
+(1, 13, 1, '2019-11-11', 540000),
+(2, 14, 1, '2019-12-15', 150000),
+(3, 15, 5, '2019-12-14', 650000),
+(4, 13, 2, '2020-09-03', 350000),
+(5, 14, 2, '2021-05-12', 500000),
+(6, 16, 2, '2020-12-19', 750000),
+(7, 16, 3, '2020-11-24', 450000),
+(8, 14, 3, '2020-12-24', 550000),
+(9, 15, 4, '2020-12-20', 300000),
+(10, 13, 4, '2020-07-14', 350000),
+(11, 16, 4, '2020-07-14', 850000),
+(12, 14, 1, '2020-07-14', 350000),
+(13, 13, 3, '2020-07-14', 600000),
+(14, 15, 1, '2019-12-13', 200000),
+(15, 15, 8, '2021-12-13', 123432);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `phi_ve_sinh`
 --
 
@@ -290,16 +307,45 @@ CREATE TABLE `phi_ve_sinh` (
 --
 
 INSERT INTO `phi_ve_sinh` (`idphi_ve_sinh`, `idHoKhau`, `phiVeSinh`, `ngayNop`, `Da_thu`, `SoNhanKhau`, `Thang`, `Nam`) VALUES
-(1, 13, 72000, '2020-02-10 00:00:00', 1, 4, 4, 2020),
-(47, 14, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2020),
-(48, 15, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2021),
-(49, 15, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2020),
-(50, 15, 72000, '2020-12-01 10:53:29', 1, 4, 10, 2021),
-(51, 15, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2020),
-(52, 16, 72000, '2020-12-01 10:53:29', 1, 4, 10, 2020),
-(53, 16, 72000, '2020-12-01 10:53:30', 1, 4, 10, 2021),
-(54, 16, 72000, '2020-12-01 10:53:30', 0, 4, 10, 2020),
-(55, 16, 72000, '2020-12-01 10:53:30', 0, 4, 10, 2020);
+(1, 13, 72000, '2020-02-10 00:00:00', 1, 3, 4, 2020),
+(47, 14, 72000, '2020-12-01 10:53:29', 1, 5, 10, 2020),
+(48, 15, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2020),
+(55, 16, 72000, '2020-12-01 10:53:30', 1, 2, 10, 2020),
+(56, 13, 72000, '2020-02-10 00:00:00', 1, 3, 4, 2019),
+(57, 14, 72000, '2020-12-01 10:53:29', 0, 5, 10, 2019),
+(58, 15, 72000, '2020-12-01 10:53:29', 1, 4, 10, 2019),
+(59, 16, 72000, '2020-12-01 10:53:30', 0, 2, 10, 2019),
+(64, 13, 72000, '2020-02-10 00:00:00', 1, 3, 4, 2021),
+(65, 14, 72000, '2020-12-01 10:53:29', 0, 5, 10, 2021),
+(66, 15, 72000, '2020-12-01 10:53:29', 0, 4, 10, 2021),
+(67, 16, 72000, '2020-12-01 10:53:30', 0, 2, 10, 2021);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `su_kien`
+--
+
+CREATE TABLE `su_kien` (
+  `id` int(11) NOT NULL,
+  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `code` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `ngay_bat_dau` date DEFAULT NULL,
+  `ngay_ket_thuc` date DEFAULT NULL,
+  `nam` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `su_kien`
+--
+
+INSERT INTO `su_kien` (`id`, `name`, `code`, `ngay_bat_dau`, `ngay_ket_thuc`, `nam`) VALUES
+(1, 'Trung thu cho em', 'TTCE', '2019-04-04', '2019-11-12', 2019),
+(2, 'Miền Trung Thân Yêu', 'MTTY', '2021-04-01', '2021-12-02', 2021),
+(3, 'Xuân Yêu Thương', 'XYT', '2020-01-11', '2020-11-15', 2020),
+(4, 'Qũy Trẻ Em', 'QTE', '2020-02-01', '2020-10-11', 2020),
+(5, 'Tết Đoàn Viên', 'TDV', '2019-01-10', '2019-12-12', 2019),
+(8, 'Huấn Rose', 'CLTMCA', '2021-12-02', '2021-12-02', 2021);
 
 -- --------------------------------------------------------
 
@@ -352,6 +398,7 @@ CREATE TABLE `thanh_vien_cua_ho` (
 INSERT INTO `thanh_vien_cua_ho` (`idNhanKhau`, `idHoKhau`, `quanHeVoiChuHo`) VALUES
 (26, 14, 'Chủ hộ'),
 (27, 13, 'Vợ'),
+(28, 13, 'Chủ hộ'),
 (29, 15, 'Chủ hộ'),
 (30, 15, 'Vợ'),
 (31, 15, 'Con trai'),
@@ -359,7 +406,9 @@ INSERT INTO `thanh_vien_cua_ho` (`idNhanKhau`, `idHoKhau`, `quanHeVoiChuHo`) VAL
 (33, 16, 'Chủ hộ'),
 (34, 16, 'Vợ'),
 (35, 16, 'Con trai'),
-(36, 16, 'Con gái');
+(36, 16, 'Con gái'),
+(37, 14, 'Bố'),
+(38, 14, 'Mẹ');
 
 -- --------------------------------------------------------
 
@@ -430,18 +479,7 @@ ALTER TABLE `chung_minh_thu` ADD FULLTEXT KEY `soCMT` (`soCMT`);
 -- Chỉ mục cho bảng `dinh_chinh`
 --
 ALTER TABLE `dinh_chinh`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `idHoKhau` (`idHoKhau`),
-  ADD KEY `nguoiThayDoi` (`nguoiThayDoi`);
-
---
--- Chỉ mục cho bảng `dong_gop`
---
-ALTER TABLE `dong_gop`
-  ADD PRIMARY KEY (`iddong_gop`),
-  ADD KEY `idHK` (`idHoKhau`),
-  ADD KEY `idLoai` (`idLoaiDongGop`),
-  ADD KEY `idLanDG` (`idLanDong`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `gia_dinh`
@@ -473,12 +511,6 @@ ALTER TABLE `lan_dong`
   ADD PRIMARY KEY (`idlan_dong`);
 
 --
--- Chỉ mục cho bảng `loai_dong_gop`
---
-ALTER TABLE `loai_dong_gop`
-  ADD PRIMARY KEY (`idloai_dong_gop`);
-
---
 -- Chỉ mục cho bảng `nhan_khau`
 --
 ALTER TABLE `nhan_khau`
@@ -488,11 +520,22 @@ ALTER TABLE `nhan_khau`
 ALTER TABLE `nhan_khau` ADD FULLTEXT KEY `hoTen` (`hoTen`,`bietDanh`);
 
 --
+-- Chỉ mục cho bảng `phi_dong_gop`
+--
+ALTER TABLE `phi_dong_gop`
+  ADD PRIMARY KEY (`iddong_gop`);
+
+--
 -- Chỉ mục cho bảng `phi_ve_sinh`
 --
 ALTER TABLE `phi_ve_sinh`
-  ADD PRIMARY KEY (`idphi_ve_sinh`),
-  ADD KEY `fkIDHK` (`idHoKhau`);
+  ADD PRIMARY KEY (`idphi_ve_sinh`);
+
+--
+-- Chỉ mục cho bảng `su_kien`
+--
+ALTER TABLE `su_kien`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `tam_tru`
@@ -512,8 +555,7 @@ ALTER TABLE `tam_vang`
 -- Chỉ mục cho bảng `thanh_vien_cua_ho`
 --
 ALTER TABLE `thanh_vien_cua_ho`
-  ADD PRIMARY KEY (`idNhanKhau`,`idHoKhau`),
-  ADD KEY `idHoKhau` (`idHoKhau`);
+  ADD PRIMARY KEY (`idNhanKhau`,`idHoKhau`);
 
 --
 -- Chỉ mục cho bảng `tieu_su`
@@ -545,12 +587,6 @@ ALTER TABLE `dinh_chinh`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `dong_gop`
---
-ALTER TABLE `dong_gop`
-  MODIFY `iddong_gop` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `gia_dinh`
 --
 ALTER TABLE `gia_dinh`
@@ -575,10 +611,22 @@ ALTER TABLE `nhan_khau`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
+-- AUTO_INCREMENT cho bảng `phi_dong_gop`
+--
+ALTER TABLE `phi_dong_gop`
+  MODIFY `iddong_gop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT cho bảng `phi_ve_sinh`
 --
 ALTER TABLE `phi_ve_sinh`
-  MODIFY `idphi_ve_sinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `idphi_ve_sinh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT cho bảng `su_kien`
+--
+ALTER TABLE `su_kien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `tam_tru`
@@ -603,30 +651,6 @@ ALTER TABLE `tieu_su`
 --
 ALTER TABLE `users`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `dong_gop`
---
-ALTER TABLE `dong_gop`
-  ADD CONSTRAINT `idHK` FOREIGN KEY (`idHoKhau`) REFERENCES `thanh_vien_cua_ho` (`idHoKhau`),
-  ADD CONSTRAINT `idLanDG` FOREIGN KEY (`idLanDong`) REFERENCES `lan_dong` (`idlan_dong`),
-  ADD CONSTRAINT `idLoai` FOREIGN KEY (`idLoaiDongGop`) REFERENCES `loai_dong_gop` (`idloai_dong_gop`);
-
---
--- Các ràng buộc cho bảng `lan_dong`
---
-ALTER TABLE `lan_dong`
-  ADD CONSTRAINT `idLDG` FOREIGN KEY (`idlan_dong`) REFERENCES `dong_gop` (`iddong_gop`);
-
---
--- Các ràng buộc cho bảng `phi_ve_sinh`
---
-ALTER TABLE `phi_ve_sinh`
-  ADD CONSTRAINT `fkIDHK` FOREIGN KEY (`idHoKhau`) REFERENCES `thanh_vien_cua_ho` (`idHoKhau`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
