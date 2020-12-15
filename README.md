@@ -7,4 +7,5 @@ P3: Hướng dẫn
 B1: clone project từ github về máy tính
 B2: mở xampp, mở mysql, trên giao diện mysql server, import database từ file DBcnpm_23.sql Trong thư mục SQL của project, đặt tên cho database là cnpm23_final
 B3: Mở netbeans, mở project, thêm thư viện mysql-conector, jfree, jchart
-B4: Run project.
+B4: Chỉnh sửa thông tin tài khoản cho mySQL tương ứng
+B5: Run project.
